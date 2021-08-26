@@ -1,11 +1,11 @@
+//todo Arrow function
 function sumInputNumbers() {
     const inputArray = [];
     let input;
     while (input = prompt("Enter a value: ")) {
         if (isNaN(input)) {
             break;
-        }
-        else {
+        } else {
             inputArray.push(parseInt(input));
         }
 
@@ -13,7 +13,7 @@ function sumInputNumbers() {
 
     alert("Done");
 
-
+    //todo Rename
     let arraySum = inputArray.reduce((a, b) => a + b, 0);
     console.log(`${arraySum} - Sum of entered values`);
 }

@@ -39,7 +39,7 @@ let students = [
 ]
 
 //calcs student average mark
-const studentAverage = function countsStudentAverageMark(arr) {
+const studentAverage = (arr) => {
     let sum = 0;
     let res = 0;
 
@@ -48,22 +48,24 @@ const studentAverage = function countsStudentAverageMark(arr) {
         let row = arr[i].marks;
 
         for (let item of row) {
+            //todo rename a & b
             sum = row.reduce(function (a, b) {
                 return a + b;
             })
             res = sum / row.length;
         }
-
         console.log(`for ${studentName} average mark is ${res}`)
 
     }
 }
 
 //output students with mark < 5
+//todo Without function
 const lessThenFive = function outputLessThenFive(arr) {
     let sum = 0;
     let res = 0;
 
+    //todo Use the same style
     for (let i = 0; i < arr.length; i++) {
         let studentName = arr[i].name;
         let row = arr[i].marks;
@@ -107,8 +109,10 @@ const minAndMax = function findMinAndMax(arr) {
     }
 
 
+    //todo Read about destructuring
     for (n = 0; n < resultsArray.length; n++) {
-        let min_of_array = Math.min.apply(Math, resultsArray);
+        //todo use camel case
+        let min_of_array = Math.min([...resultsArray]);
         let max_of_array = Math.max.apply(Math, resultsArray);
         if (resultsArray[n] === min_of_array) {
             console.log(`${studentsNames[n]} has lowest mark ${resultsArray[n]}`);
@@ -146,6 +150,7 @@ const studentSort = function sortsStudentsReduced(arr) {
     }
 
 
+    //todo Use destructuring
     let namesAndMarks = Object.assign(...resultsArray.map((k, i) => ({[k]: studentsNames[i]})))
     const sortable = Object.entries(namesAndMarks)
         .sort(([,a],[,b]) => b - a)
@@ -161,7 +166,6 @@ const aboveAverage = function findsStudentsAboveAverage(arr) {
     let resultsArray = [];
     let studentsNames = [];
 
-
     for (let i = 0; i < arr.length; i++) {
         let studentName = arr[i].name;
         let row = arr[i].marks;
@@ -175,11 +179,7 @@ const aboveAverage = function findsStudentsAboveAverage(arr) {
 
         studentsNames.push(studentName);
         resultsArray.push(res);
-
-
     }
-
-
 
     let notesSum = resultsArray.reduce((a, b) => a + b, 0);
     let noteMedium = notesSum / resultsArray.length;

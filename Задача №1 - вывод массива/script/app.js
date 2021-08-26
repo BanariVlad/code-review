@@ -1,7 +1,6 @@
+//todo Rename
 let n = [1, 4, 5, 6, 8];
 
-
-/*
 
 // for
 for (let i = 0; i < n.length; i++) {
@@ -37,14 +36,8 @@ for (let arrItem in n) {
     console.log(`${arrItem} is in array ${n}`);
 }
 
- */
-
-
-
 //map
-const newArr = n.map(function(element, index, array){
-    return element;
-});
+const newArr = n.map(value => value**2)
 
 console.log(newArr);
 
